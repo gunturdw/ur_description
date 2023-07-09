@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    
+    <xacro:macro name="table" params="parent">
+        <joint name="world_table_fixed_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="table_link"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </joint>
+        <link name="table_link">
+            <collision>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://ur_description/meshes/table/collision/Table_col.stl"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin xyz="0.00 0.00 0.00" rpy="0.00 0.00 0.00"/>
+                <geometry>
+                    <mesh filename="package://ur_description/meshes/table/visual/Table_vis.stl"/>
+                </geometry>
+                <material name="LightGrey">
+                    <color rgba="0.7 0.7 0.7 1.0"/>
+                </material>
+            </visual>
+            <inertial>
+                <origin xyz="0.000000 0.000000 0.749954" rpy="0.00 0.00 0.00"/>
+                <mass value="78.723900"/>
+                <inertia ixx="8.767668" ixy="0.000000" ixz="0.000000"
+                        iyy="14.672342" iyz="0.000000"
+                        izz="14.054510" />
+            </inertial>
+        </link> 
+    </xacro:macro>
+</robot>

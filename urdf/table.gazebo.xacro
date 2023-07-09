@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<!-- ros_control plugin -->
+	<!-- Hand -->
+	<gazebo reference="table_link">
+		<!-- <mu1>0.2</mu1>
+		<mu2>0.2</mu2> -->
+		<material>Gazebo/White</material>
+		<!-- <selfCollide>false</selfCollide> -->
+	</gazebo>
+</robot>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur3" >
+    <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+    <!-- common stuff -->
+    <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro" />
+    <!-- ur3 -->
+    <xacro:include filename="$(find ur_description)/urdf/ur3.urdf.xacro" />
+    <!-- table -->
+    <xacro:include filename="$(find ur_description)/urdf/table.urdf.xacro" />
+    <!-- gripper -->
+    <xacro:include filename="$(find ur_description)/urdf/rg2.urdf.xacro" />
+    <!-- arm -->
+    <xacro:arg name="kinematics_config" default="$(find ur_description)/config/ur3_default.yaml"/>
+    <xacro:ur3_robot prefix="" joint_limited="false"
+        transmission_hw_interface="$(arg transmission_hw_interface)"
+        kinematics_file="${load_yaml('$(arg kinematics_config)')}"
+    />
+
+    <link name="world">
+    </link>
+
+    <xacro:table parent="world" />
+    <!-- Table to UR -->
+    <joint name="table_ur3_fixed_joint" type="fixed">
+        <parent link="table_link" />
+        <child link = "base_link" />
+        <origin xyz="-0.45 -0.25 0.880" rpy="0.0 0.0 0.0" />
+    </joint>
+    <!-- UR to Gripper -->
+    <xacro:rg2 parent="tool0" />
+    
+    <gazebo>
+        <plugin name="gazebo+grasp_fix" filename="libgazebo_grasp_fix.so">
+            <arm>
+                <arm_name>ur3_arm</arm_name>
+                <palm_link>hand_link</palm_link>
+                <gripper_link>l_finger_link</gripper_link>
+                <gripper_link>r_finger_link</gripper_link>
+            </arm>
+        </plugin>
+    </gazebo>
+</robot>
