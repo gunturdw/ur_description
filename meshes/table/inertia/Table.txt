@@ -1,0 +1,34 @@
+Mass properties of Table
+     Configuration: Default
+     Coordinate system: Coordinate System1
+
+Density = 2700.000000 kilograms per cubic meter
+
+Mass = 78.723900 kilograms
+
+Volume = 0.029157 cubic meters
+
+Surface area = 2.470000 square meters
+
+Center of mass: ( meters )
+	X = 0.000000
+	Y = 0.000000
+	Z = 0.749954
+
+Principal axes of inertia and principal moments of inertia: ( kilograms * square meters )
+Taken at the center of mass.
+	 Ix = ( 1.000000,  0.000000,  0.000000)   	Px = 8.767668
+	 Iy = ( 0.000000,  0.000000, -1.000000)   	Py = 14.054510
+	 Iz = ( 0.000000,  1.000000,  0.000000)   	Pz = 14.672342
+
+Moments of inertia: ( kilograms * square meters )
+Taken at the center of mass and aligned with the output coordinate system.
+	Lxx = 8.767668	Lxy = 0.000000	Lxz = 0.000000
+	Lyx = 0.000000	Lyy = 14.672342	Lyz = 0.000000
+	Lzx = 0.000000	Lzy = 0.000000	Lzz = 14.054510
+
+Moments of inertia: ( kilograms * square meters )
+Taken at the output coordinate system.
+	Ixx = 53.044455	Ixy = 0.000000	Ixz = 0.000000
+	Iyx = 0.000000	Iyy = 58.949129	Iyz = 0.000000
+	Izx = 0.000000	Izy = 0.000000	Izz = 14.054510
